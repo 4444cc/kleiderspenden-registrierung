@@ -1,52 +1,83 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kleiderspenden Registrierung</title>
-  <link rel="stylesheet" href="style.css">
+<!DOCTYPE html> <!-- Definiert Dokumenttyp: HTML5 -->
+<html lang="de"> <!-- Beginn des HTML-Dokuments, Sprache: Deutsch -->
+
+<head> <!-- Kopfbereich mit Meta-Informationen -->
+  <meta charset="UTF-8"> <!-- Zeichencodierung: UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsives Design -->
+  <title>Kleiderspenden Registrierung</title> <!-- Titel der Seite -->
+  <link rel="stylesheet" href="style.css"> <!-- Verknüpft das externe CSS-Stylesheet -->
 </head>
-<body>
+
+<body> <!-- Beginn des sichtbaren Seiteninhalts -->
+
+  <!-- Header mit Logo und Navigation -->
   <header>
-    <h1>Kleiderspenden-Portal</h1>
+    <div class="logo-title"> <!-- Container für Logo + Titel -->
+      <img src="logo/Logo_Kleiderspenden.png" alt="Logo Kleiderspenden" class="logo"> <!-- Logo-datei sowie Alternativtext -->
+      <h1>Kleiderspenden-Portal</h1> <!-- Hauptüberschrift der Seite -->
+    </div>
+    <nav> <!-- Navigation -->
+      <ul> <!-- Liste für Navigationslinks -->
+        <li><a href="#">Start</a></li> <!-- Link zur Startseite -->
+        <li><a href="#">Über uns</a></li> <!-- Link zu "Über uns" -->
+        <li><a href="#">Kontakt</a></li> <!-- Link zur Kontaktseite -->
+      </ul>
+    </nav>
   </header>
 
+  <!-- Content-Bereich -->
   <main>
-    <form id="form">
-      <p>Art der Übergabe:</p>
-      <label><input type="radio" name="art" value="uebergabe" checked> Geschäftsstelle</label>
-      <label><input type="radio" name="art" value="abholung"> Abholung</label>
+    <h2>Registriere deine Kleiderspende</h2> <!-- Unterüberschrift für den Inhalt -->
 
-      <div id="adresse" class="hidden">
-        <label>Straße: <input type="text" id="strasse"></label>
-        <label>PLZ: <input type="text" id="plz" maxlength="5"></label>
+    <form id="form"> <!-- Formular zur Eingabe der Spende -->
+
+      <!-- Übergabeart -->
+      <p>Art der Übergabe:</p> <!-- Beschreibung -->
+      <label>
+        <input type="radio" name="art" value="uebergabe" checked> Geschäftsstelle <!-- Radiobutton: Übergabe -->
+      </label>
+      <label>
+        <input type="radio" name="art" value="abholung"> Abholung <!-- Radiobutton: Abholung -->
+      </label>
+
+      <!-- Adresse (nur bei Abholung sichtbar) -->
+      <div id="adresse" class="hidden"> <!-- Container, zunächst ausgeblendet -->
+        <label>Straße: <input type="text" id="strasse"></label> <!-- Eingabe Straße -->
+        <label>Postleitzahl: <input type="text" id="plz" maxlength="5"></label> <!-- Eingabe PLZ (max. 5 Zeichen) -->
       </div>
 
+      <!-- Kleidungsauswahl -->
       <label>Art der Kleidung:
-        <select id="kleidung">
+        <select id="kleidung"> <!-- Dropdown für Kleidung -->
           <option>Jacken</option>
           <option>Hosen</option>
           <option>Schuhe</option>
         </select>
       </label>
 
+      <!-- Krisengebiet -->
       <label>Krisengebiet:
-        <select id="gebiet">
+        <select id="gebiet"> <!-- Dropdown für Krisengebiet -->
           <option>Region A</option>
           <option>Region B</option>
+          <option>Region C</option>
         </select>
       </label>
 
-      <button type="submit">Spende registrieren</button>
+      <!-- Absenden -->
+      <button type="submit">Spende registrieren</button> <!-- Button zum Absenden -->
     </form>
 
-    <div id="bestaetigung" class="hidden"></div>
+    <!-- Bestätigungsausgabe -->
+    <div id="bestaetigung" class="hidden"></div> <!-- Bereich für Bestätigung, standardmäßig versteckt -->
   </main>
 
+  <!-- Footer mit rechtlichen Hinweisen -->
   <footer>
-    <p>&copy; 2025 Kleiderspenden e.V.</p>
+    <p>&copy; 2025 Kleiderspenden e.V. | Rechtliche Hinweise</p> <!-- Copyright -->
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js"></script> <!-- Verknüpfung zur JavaScript-Datei -->
 </body>
 </html>
+
