@@ -1,37 +1,123 @@
+/* ========== Grundlayout ========== */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  font-family: Arial, sans-serif; /* Standardschrift: Arial oder ähnliche Sans-Serif */
+  margin: 0;                      /* Standard-Außenabstand entfernt */
+  padding: 0;                     /* Standard-Innenabstand entfernt */
+  line-height: 1.5;               /* Zeilenhöhe */
 }
 
-header, footer {
-  background: #2b6cb0;
-  color: white;
-  padding: 1rem;
-  text-align: center;
+/* ========== Header + Logo + Navigation ========== */
+header {
+  background: #2b6cb0;   /* Blauer Hintergrund (Corporate Color) */
+  color: white;          /* Schriftfarbe im Header: weiß */
+  padding: 1rem;         /* Innenabstand (oben/unten/rechts/links) */
+  text-align: center;    /* Inhalte im Header zentriert */
 }
 
+header h1 {
+  margin: 0;             /* Überschrift ohne zusätzlichen Außenabstand */
+}
+
+/* Logo + Titel nebeneinander */
+.logo-title {
+  display: flex;             /* Flexbox: Elemente nebeneinander anordnen */
+  align-items: center;       /* Vertikal mittig ausrichten */
+  justify-content: center;   /* Horizontal in der Mitte platzieren */
+  gap: 0.5rem;               /* Abstand zwischen Logo und Titel */
+}
+
+.logo {
+  height: 70px;   /* Höhe des Logos auf 70 Pixel festgelegt */
+  width: auto;    /* Breite proportional automatisch angepasst */
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;         /* Entfernt Standard-Aufzählungspunkte */
+  padding: 0;               /* Entfernt Innenabstand */
+  margin: 0.5rem 0 0;       /* Kleiner Abstand nach oben */
+  display: flex;            /* Flexbox: horizontale Anordnung */
+  justify-content: center;  /* Navigation in der Mitte */
+  gap: 1rem;                /* Abstand zwischen den Links */
+}
+
+nav a {
+  color: white;             /* Navigationslinks in weiß */
+  text-decoration: none;    /* Unterstreichung entfernt */
+  font-weight: bold;        /* Schrift fett */
+}
+
+nav a:hover {
+  text-decoration: underline; /* Hover-Effekt: Unterstreichung */
+}
+
+/* ========== Content/Formular ========== */
 main {
-  padding: 1rem;
+  padding: 1rem;           /* Abstand um den Content-Bereich */
 }
 
-label {
-  display: block;
-  margin: 0.5rem 0;
+form label {
+  display: block;          /* Labels untereinander (Block-Element) */
+  margin: 0.5rem 0;        /* Abstand oben/unten für bessere Übersicht */
 }
 
 button {
-  margin-top: 1rem;
-  padding: 0.5rem;
-  background: #2b6cb0;
-  color: white;
-  border: none;
+  margin-top: 1rem;        /* Abstand oberhalb des Buttons */
+  padding: 0.5rem 1rem;    /* Innenabstand für bessere Klickfläche */
+  background: #2b6cb0;     /* Hintergrundfarbe: Blau */
+  color: white;            /* Schriftfarbe: Weiß */
+  border: none;            /* Kein Rahmen */
+  border-radius: 4px;      /* Abgerundete Ecken */
+  cursor: pointer;         /* Mauszeiger wird zur Hand bei Hover */
 }
 
+button:hover {
+  background: #2c5282;     /* Dunkleres Blau beim Hover-Effekt */
+}
+
+/* Dynamisches Ein-/Ausblenden */
 .hidden {
-  display: none;
+  display: none;           /* Elemente mit .hidden sind unsichtbar */
 }
 
-@media (max-width: 600px) {
-  body { font-size: 14px; }
+/* ========== Bestätigungsbereich ========== */
+#bestaetigung {
+  margin-top: 1rem;        /* Abstand nach oben */
+  padding: 1rem;           /* Innenabstand */
+  background: #e6ffed;     /* Hellgrüner Hintergrund = Erfolgsfarbe */
+  border: 1px solid #38a169; /* Grüner Rahmen für Hervorhebung */
+  border-radius: 5px;      /* Leicht abgerundete Ecken */
+  font-weight: bold;       /* Text fett dargestellt */
 }
+
+/* ========== Footer ========== */
+footer {
+  background: #2b6cb0;     /* Blau wie im Header für einheitliches Design */
+  color: white;            /* Schriftfarbe: Weiß */
+  text-align: center;      /* Inhalt zentriert */
+  padding: 1rem;           /* Innenabstand */
+  margin-top: 2rem;        /* Abstand zum Content-Bereich */
+  font-size: 0.9rem;       /* Etwas kleinere Schrift im Footer */
+}
+
+/* ========== Responsives Design (Mobile First) ========== */
+@media (max-width: 600px) {  /* Regeln gelten nur für Geräte mit max. 600px Breite */
+  body {
+    font-size: 14px;        /* Kleinere Standardschrift */
+  }
+
+  nav ul {
+    flex-direction: column; /* Navigation untereinander statt nebeneinander */
+    align-items: center;    /* Zentriert */
+    gap: 0.5rem;            /* Weniger Abstand */
+  }
+
+  form label {
+    font-size: 14px;        /* Kleinere Schrift im Formular */
+  }
+
+  button {
+    width: 100%;            /* Buttons nehmen volle Breite ein */
+  }
+}
+
